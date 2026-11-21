@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact — Ethio H Cleaning Service</title>
+<meta name="description" content="Schedule residence care with Ethio H. Tell us the rooms, the surfaces and the timing; we reply within one business day with a time for the survey.">
+<meta name="theme-color" content="#001D39">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__in">
+    <img src="assets/img/logo-lockup-mist.png" alt="">
+    <div class="loader__bar"><i></i></div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header__in">
+    <a href="index.html" class="header__mark" aria-label="Ethio H Cleaning Service — home">
+      <img src="assets/img/logo-lockup-midnight.png" alt="Ethio H Cleaning Service" class="mk-mid">
+      <img src="assets/img/logo-lockup-mist.png" alt="" class="mk-mist">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="is-active">Contact</a>
+    </nav>
+    <div class="header__cta">
+      <a href="tel:+14160000000" class="btn btn--sm">Call the house <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
+      <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu">
+  <nav aria-label="Mobile">
+    <a class="menu__link" href="index.html"><small>01</small>Home</a>
+    <a class="menu__link" href="services.html"><small>02</small>Services</a>
+    <a class="menu__link" href="contact.html"><small>03</small>Contact</a>
+  </nav>
+  <div class="menu__foot"><span>+1 416 000 0000</span><span>care@ethioh.ca</span><span>Toronto</span></div>
+</div>
+
+<main>
+<section class="phero" data-theme="dark">
+  <div class="phero__bg" data-parallax="0.06" aria-hidden="true" style="background-image:url('assets/textures/wave-inlay.jpg')"></div>
+  <div class="wrap phero__in">
+    <p class="kicker rv">Contact · Begin</p>
+    <h1 data-lines>
+      <span class="ln"><i>Tell us about</i></span>
+      <span class="ln"><i>the <span class="thin">residence.</span></i></span>
+    </h1>
+    <p class="rv" data-d="1" data-split>A short note is enough: the rooms, the surfaces that need attention, and when you would like us to arrive. We reply within one business day.</p>
+    <div class="phero__meta rv" data-d="2">
+      <div><span>Reply within</span><b>One business day</b></div>
+      <div><span>Survey</span><b>45 minutes, no cost</b></div>
+      <div><span>First availability</span><b>Usually within a week</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--paper pat-edge pat-edge--top" id="form" data-rail="Request">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-form">
+        <div class="sec-head" style="margin-bottom:clamp(24px,3vw,36px)">
+          <div data-lines>
+            <p class="kicker rv">01 — Residence care request</p>
+            <h2 class="h2 display-ink" style="margin-top:20px;font-size:clamp(30px,3.8vw,54px)"><span class="ln"><i>Seven questions.</i></span></h2>
+          </div>
+        </div>
+
+        <!-- ══ wizard : one question per screen ══ -->
+        <div class="booker" id="booker">
+          <div class="booker__bar">
+            <div class="booker__track"><i id="booker-fill"></i></div>
+            <div class="booker__meta">
+              <span id="booker-step-label">01 — Your name</span>
+              <span id="booker-count">1 / 7</span>
+            </div>
+          </div>
+
+          <form id="booking" novalidate>
+            <!-- 01 · name -->
+            <div class="step is-active" data-step="1" data-label="01 — Your name">
+              <label class="q" for="name">Who are we <em>writing to?</em></label>
+              <p class="q__hint">The name the household uses.</p>
+              <input class="q__input" id="name" name="name" type="text" autocomplete="name" required placeholder="First and family name">
+              <span class="msg">A name, please.</span>
+            </div>
+
+            <!-- 02 · phone -->
+            <div class="step" data-step="2" data-label="02 — Phone">
+              <label class="q" for="phone">A number we can <em>reach you on.</em></label>
+              <p class="q__hint">Mobile or WhatsApp. We use it once, to confirm the survey.</p>
+              <input class="q__input" id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 416 000 0000">
+              <span class="msg">A phone number, please.</span>
+            </div>
+
+            <!-- 03 · email -->
+            <div class="step" data-step="3" data-label="03 — Email">
+              <label class="q" for="email">Where the written <em>reply goes.</em></label>
+              <p class="q__hint">One message with the scope and the figure.</p>
+              <input class="q__input" id="email" name="email" type="email" autocomplete="email" required placeholder="name@example.com">
+              <span class="msg">Check the address.</span>
+            </div>
+
+            <!-- 04 · neighbourhood -->
+            <div class="step" data-step="4" data-label="04 — Neighbourhood">
+              <label class="q" for="neighbourhood">Which part of <em>Toronto?</em></label>
+              <p class="q__hint">We work the six areas below. Beyond them, ask.</p>
+              <div class="q__chips" id="nbh-chips">
+                <button type="button" class="chip" data-for="neighbourhood" data-value="The Annex">The Annex</button>
+                <button type="button" class="chip" data-for="neighbourhood" data-value="Rosedale">Rosedale</button>
+                <button type="button" class="chip" data-for="neighbourhood" data-value="Forest Hill">Forest Hill</button>
+                <button type="button" class="chip" data-for="neighbourhood" data-value="Yorkville">Yorkville</button>
+                <button type="button" class="chip" data-for="neighbourhood" data-value="Lawrence Park">Lawrence Park</button>
+                <button type="button" class="chip" data-for="neighbourhood" data-value="Bridle Path">Bridle Path</button>
+                <button type="button" class="chip" data-for="neighbourhood" data-value="Outside Toronto">Outside Toronto</button>
+              </div>
+              <input type="hidden" id="neighbourhood" name="neighbourhood" required>
+              <span class="msg">Choose an area.</span>
+            </div>
+
+            <!-- 05 · residence -->
+            <div class="step" data-step="5" data-label="05 — Residence">
+              <label class="q" for="residence">The kind of <em>home.</em></label>
+              <p class="q__hint">It sets the crew and the hours, nothing else.</p>
+              <div class="q__chips" id="res-chips">
+                <button type="button" class="chip" data-for="residence" data-value="House — up to 2,500 sq ft">House — up to 2,500 sq ft</button>
+                <button type="button" class="chip" data-for="residence" data-value="House — 2,500 to 5,000 sq ft">House — 2,500 to 5,000 sq ft</button>
+                <button type="button" class="chip" data-for="residence" data-value="Estate — 5,000 sq ft and above">Estate — 5,000 sq ft and above</button>
+                <button type="button" class="chip" data-for="residence" data-value="Apartment — private floor">Apartment — private floor</button>
+                <button type="button" class="chip" data-for="residence" data-value="Other / not sure">Other / not sure</button>
+              </div>
+              <input type="hidden" id="residence" name="residence" required>
+              <span class="msg">Choose a residence.</span>
+            </div>
+
+            <!-- 06 · service -->
+            <div class="step" data-step="6" data-label="06 — Service">
+              <label class="q" for="service">What should we <em>take on?</em></label>
+              <p class="q__hint">One visit, or a standing arrangement.</p>
+              <div class="q__chips" id="svc-chips">
+                <button type="button" class="chip" data-for="service" data-value="Residence care — weekly">Residence care — weekly</button>
+                <button type="button" class="chip" data-for="service" data-value="Residence care — fortnightly">Residence care — fortnightly</button>
+                <button type="button" class="chip" data-for="service" data-value="Glass &amp; light">Glass &amp; light</button>
+                <button type="button" class="chip" data-for="service" data-value="Stone &amp; marble">Stone &amp; marble</button>
+                <button type="button" class="chip" data-for="service" data-value="Linen &amp; interiors">Linen &amp; interiors</button>
+                <button type="button" class="chip" data-for="service" data-value="Brass &amp; fixtures">Brass &amp; fixtures</button>
+                <button type="button" class="chip" data-for="service" data-value="Estate opening">Estate opening</button>
+                <button type="button" class="chip" data-for="service" data-value="Not sure — advise me">Not sure — advise me</button>
+              </div>
+              <input type="hidden" id="service" name="service" required>
+              <span class="msg">Choose a service.</span>
+            </div>
+
+            <!-- 07 · date & time -->
+            <div class="step" data-step="7" data-label="07 — Date &amp; time">
+              <label class="q">Choose a <em>day and window.</em></label>
+              <p class="q__hint">Blue is taken. Clear is yours.</p>
+
+              <div class="cal2" id="cal">
+                <div class="cal2__stage">
+                  <button type="button" class="cal2__nav" id="cal-prev" aria-label="Previous month">
+                    <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 3.5 5.5 9 11 14.5"/></svg>
+                  </button>
+
+                  <div class="cal2__figure">
+                    <div class="cal2__meta">
+                      <span class="cal2__month" id="cal-month">November</span>
+                      <span class="cal2__year" id="cal-year">2026</span>
+                    </div>
+                    <div class="cal2__num" id="cal-num">21</div>
+                    <div class="cal2__dow" id="cal-dow">Saturday</div>
+                  </div>
+
+                  <button type="button" class="cal2__nav" id="cal-next" aria-label="Next month">
+                    <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3.5 12.5 9 7 14.5"/></svg>
+                  </button>
+                </div>
+
+                <div class="cal2__dowrow"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+                <div class="cal2__grid" id="cal-grid"></div>
+
+                <div class="cal2__foot">
+                  <span class="cal2__key"><i class="k-open"></i>Open</span>
+                  <span class="cal2__key"><i class="k-booked"></i>Booked</span>
+                  <span class="cal2__caption">Residence care · Toronto</span>
+                </div>
+              </div>
+
+              <div class="slots" id="slots" aria-live="polite"></div>
+
+              <input type="hidden" id="date" name="preferred_date">
+              <input type="hidden" id="time" name="preferred_time">
+              <span class="msg" id="date-msg">Choose a day and a window.</span>
+
+              <div class="field" style="margin-top:34px">
+                <label for="notes">What needs attention <span style="letter-spacing:.1em;opacity:.6">(optional)</span></label>
+                <textarea id="notes" name="notes" rows="3" placeholder="The rooms, the surfaces, the access — anything we should know before we arrive."></textarea>
+              </div>
+
+              <p class="form-note" style="margin-top:22px">The survey is free and takes forty-five minutes. We reply within one business day.</p>
+            </div>
+
+            <div class="booker__nav">
+              <button type="button" class="btn btn--ghost" id="booker-back" hidden>Back</button>
+              <button type="button" class="btn" id="booker-next">Next
+                <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg>
+              </button>
+              <button type="submit" class="btn" id="booker-submit" hidden>Send the request
+                <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-success" id="booking-success" role="status" aria-live="polite">
+          <div class="form-success__wave" aria-hidden="true"></div>
+          <h3>Received.<br>We will write back.</h3>
+          <p data-mode>The request is in our schedule. We reply within one business day with a time for the survey.</p>
+          <div class="ref"><span>Reference</span><b data-ref>EH-0000-0000</b></div>
+        </div>
+      </div>
+
+      <!-- SIDE -->
+      <aside class="contact-side">
+        <div class="side-card">
+          <h4>Direct</h4>
+          <a href="tel:+14160000000">+1 416 000 0000</a>
+          <a href="mailto:care@ethioh.ca">care@ethioh.ca</a>
+          <p style="margin-top:8px">WhatsApp on the same number. Voice notes are welcome.</p>
+        </div>
+        <div class="side-card">
+          <h4>Hours</h4>
+          <p>Monday – Saturday · 07:00 – 18:00<br>Sunday by arrangement</p>
+        </div>
+        <div class="side-card">
+          <h4>Area</h4>
+          <p>The Annex · Rosedale · Forest Hill · Yorkville · Lawrence Park · Bridle Path</p>
+        </div>
+        <div class="area-map rv">
+<svg viewBox="0 0 320 270" role="img" aria-label="Map of the service area across Toronto">
+            <defs>
+              <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+                <circle cx="1.5" cy="1.5" r="0.7" fill="#BDD8E9"/>
+              </pattern>
+            </defs>
+            <rect width="320" height="270" fill="url(#dots)" opacity=".8"/>
+
+            <!-- Lake Ontario -->
+            <path d="M0 214 C 42 206, 74 224, 118 218 S 200 226, 246 216 S 300 212, 320 218 L320 270 L0 270 Z" fill="#BDD8E9" opacity=".45"/>
+            <path d="M0 214 C 42 206, 74 224, 118 218 S 200 226, 246 216 S 300 212, 320 218" fill="none" stroke="#49769F" stroke-width=".9" opacity=".8"/>
+
+            <!-- the ravine / Don river line -->
+            <path d="M236 18 C 224 54, 246 82, 232 112 S 250 166, 238 206" fill="none" stroke="#6EA2B3" stroke-width=".9" opacity=".7"/>
+
+            <!-- main arteries, schematic -->
+            <path d="M28 44 C 96 40, 168 52, 296 44" fill="none" stroke="#BDD8E9" stroke-width=".9" opacity=".85"/>
+            <path d="M22 96 C 104 90, 176 104, 300 96" fill="none" stroke="#BDD8E9" stroke-width=".9" opacity=".85"/>
+            <path d="M18 150 C 100 142, 180 158, 302 148" fill="none" stroke="#BDD8E9" stroke-width=".9" opacity=".85"/>
+            <path d="M20 192 C 104 184, 176 198, 300 190" fill="none" stroke="#BDD8E9" stroke-width=".9" opacity=".85"/>
+            <path d="M86 10 C 92 70, 84 130, 92 210" fill="none" stroke="#BDD8E9" stroke-width=".8" opacity=".6"/>
+            <path d="M172 12 C 168 70, 178 130, 170 208" fill="none" stroke="#BDD8E9" stroke-width=".8" opacity=".6"/>
+            <path d="M262 14 C 258 72, 268 128, 260 200" fill="none" stroke="#BDD8E9" stroke-width=".8" opacity=".6"/>
+
+            <!-- service core -->
+            <ellipse class="core" cx="168" cy="118" rx="104" ry="86"/>
+            <ellipse class="ring" cx="168" cy="118" rx="34" ry="26"/>
+
+            <circle cx="168" cy="118" r="3.6" fill="#0A4174"/>
+            <circle cx="126" cy="96" r="2" fill="#49769F"/>
+            <circle cx="206" cy="100" r="2" fill="#49769F"/>
+            <circle cx="196" cy="150" r="2" fill="#49769F"/>
+            <circle cx="132" cy="146" r="2" fill="#49769F"/>
+
+            <text class="lbl" x="168" y="112" text-anchor="middle">Yorkville</text>
+            <text class="lbl" x="112" y="88" text-anchor="middle">The Annex</text>
+            <text class="lbl" x="220" y="92" text-anchor="middle">Rosedale</text>
+            <text class="lbl" x="214" y="164" text-anchor="middle">Forest Hill</text>
+            <text class="lbl" x="118" y="160" text-anchor="middle">Lawrence Park</text>
+            <text class="lbl" x="212" y="184" text-anchor="middle">Bridle Path</text>
+            <text class="lbl" x="60" y="236" text-anchor="middle" style="opacity:.7">Lake Ontario</text>
+          </svg>
+        </div>
+        <p class="price-note" style="margin-top:14px">Residences beyond the core are quoted with transport included in the figure.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec sec--midnight sec--tight" data-theme="dark">
+  <div class="wrap">
+    <div class="quote" style="align-items:center">
+      <div class="quote__mark" style="color:rgba(189,216,233,.25)">“</div>
+      <div class="quote__body">
+        <blockquote style="color:var(--mist);font-size:clamp(20px,2.5vw,34px)">Say “Schedule residence care,” not <em style="color:var(--sky)">“Discover perfection.”</em></blockquote>
+        <div class="quote__attr"><span class="label" style="color:var(--mist)">Our writing standard</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" data-theme="dark">
+  <div class="wrap footer__top">
+    <div class="footer__mark">
+      <img src="assets/img/logo-lockup-mist.png" alt="Ethio H Cleaning Service">
+      <p>Private estate care. Toronto, Canada. Edition 02.</p>
+    </div>
+        <div class="footer__col"><h4>Reach us</h4><a href="tel:+14160000000">+1 416 000 0000</a><a href="mailto:care@ethioh.ca">care@ethioh.ca</a><a href="contact.html">WhatsApp</a></div>
+    <div class="footer__col"><h4>Hours</h4><p>Mon – Sat · 07:00 – 18:00</p><p>Sunday by arrangement</p></div>
+    <div class="footer__col"><h4>Area</h4><p>The Annex · Rosedale</p><p>Forest Hill · Yorkville · Lawrence Park</p></div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© <span data-year>2026</span> Ethio H Cleaning Service</span>
+    <span>Identity by Ethio H · Built for quiet rooms</span>
+  </div>
+  <div class="footer__giant" aria-hidden="true">ETHIO H</div>
+</footer>
+
+<nav class="rail" aria-label="Chapters"></nav>
+<script src="js/site.js"></script>
+</body>
+</html>

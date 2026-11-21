@@ -1,0 +1,11 @@
+{
+  "name": "ethio-h",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ethio H Cleaning Service — private estate care. Static site + booking endpoint.",
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 ."
+  },
+  "engines": { "node": ">=18" }
+}
