@@ -1892,3 +1892,162 @@ body.menu-open .burger{pointer-events:none}
 /* the kicker and sub keep their ink against the pane */
 .hero__copy .kicker{ color:var(--estate) !important; }
 .hero__sub{ color:rgba(0,29,57,.82) !important; }
+
+/* ============================================================
+   58 · No water — the room is the picture
+   ============================================================ */
+.hero--still{height:100vh;height:100svh;min-height:560px}
+.hero--still .hero__stage{position:relative;height:100vh;height:100svh;min-height:560px}
+.hero--still .hero__copy{opacity:1 !important;transform:none !important;z-index:5}
+.hero--still .hero__copy::before{
+  /* keep the legibility pane, drop the water-linked fade */
+  opacity:1 !important;
+}
+.hero--still .hero__brandmark{opacity:1}
+.hero--still .h1-ink .ln > i{
+  -webkit-text-fill-color:var(--midnight) !important;
+  color:var(--midnight) !important;
+  background-image:linear-gradient(180deg,rgba(0,29,57,.30),rgba(0,29,57,.04) 55%,rgba(10,65,116,.18)) !important;
+  background-color:var(--midnight) !important;
+  background-blend-mode:multiply;
+}
+.hero--still .h1-ink .thin,
+.hero--still .h1-ink .ln > i .thin{
+  -webkit-text-fill-color:var(--estate) !important;color:var(--estate) !important;
+  background-image:none !important;
+}
+
+/* ============================================================
+   59 · Menu — contact only, one Book button
+   ============================================================ */
+.menu{justify-content:flex-start !important;padding-top:0 !important}
+.menu__body{
+  display:flex;flex-direction:column;
+  padding:calc(var(--h-header) + clamp(28px,5vw,56px)) var(--gutter) 40px;
+  flex:1;min-height:0;
+}
+.menu__body .kicker{color:var(--sea);margin-bottom:clamp(20px,3vw,32px)}
+.menu__rows{display:flex;flex-direction:column;border-top:1px solid var(--hair-light)}
+.menu__row{
+  display:grid;grid-template-columns:clamp(80px,14vw,150px) 1fr;
+  align-items:baseline;gap:16px;
+  padding:clamp(14px,2vw,20px) 0;
+  border-bottom:1px solid var(--hair-light);
+  font-family:var(--f-sub);
+}
+.menu__row small{
+  font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(189,216,233,.45);
+}
+.menu__row span{
+  font-size:clamp(15px,2.2vw,22px);font-weight:700;letter-spacing:.01em;
+  color:var(--mist);
+}
+a.menu__row:hover span{color:#fff}
+.menu__book{margin-top:auto;align-self:flex-start}
+.menu__foot{display:none !important}
+
+/* ============================================================
+   60 · Header — Book sits beside the menu below the nav breakpoint
+   ============================================================ */
+.header__book{display:none}
+@media (max-width:1080px){
+  .header__cta{gap:10px}
+  .header__book{display:inline-flex;padding:12px 20px;font-size:11px}
+}
+@media (max-width:520px){
+  .header__book{padding:11px 16px;font-size:10.5px}
+}
+
+/* the stage carries the room now that no canvas does */
+.hero--still .hero__stage{
+  background-image:url('../assets/img/hero-estate.jpg');
+  background-size:cover;
+  background-position:center 42%;
+  background-color:var(--midnight);
+}
+.hero--still .hero__stage::after{content:none !important}
+.hero--still .hero__vignette{
+  background:linear-gradient(to bottom,rgba(0,29,57,.34),rgba(0,29,57,.06) 34%,rgba(0,29,57,0) 60%) !important;
+}
+
+/* ============================================================
+   61 · Question list — no answers to hide, so no accordion
+   ============================================================ */
+.qlist{border-top:1px solid var(--hair)}
+.qlist__row{
+  display:grid;grid-template-columns:clamp(48px,6vw,90px) 1fr;align-items:baseline;gap:20px;
+  padding:clamp(18px,2.4vw,26px) 0;border-bottom:1px solid var(--hair);
+  font-family:var(--f-sub);font-weight:700;font-size:clamp(15px,1.7vw,20px);letter-spacing:.01em;
+}
+.qlist__idx{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--steel)}
+
+/* the wave band is pattern only — no wordmark image inside it */
+.waveband__logo{display:none !important}
+
+/* method section removed from the home page */
+#method{display:none !important}
+
+/* ============================================================
+   62 · Keep the reading column clear of the right-hand rail
+   ============================================================ */
+@media (min-width:1081px){
+  :root{--wrap:min(1500px,88vw)}
+  .rail{right:10px !important}
+}
+
+/* the menu sits on Midnight, so its button goes light */
+.menu__book{
+  --bg:var(--mist) !important;--fg:var(--midnight) !important;
+  background:var(--mist) !important;color:var(--midnight) !important;
+}
+.menu__book::before{background:linear-gradient(120deg,var(--sky),var(--sea)) !important}
+.menu__book:hover,.menu__book:focus-visible{color:var(--midnight) !important}
+
+/* the header hides its CTA button below 1080 — the Book button replaces it */
+@media (max-width:1080px){
+  .header .header__cta a.header__book{display:inline-flex !important}
+  .header .header__cta a.btn:not(.header__book){display:none !important}
+}
+
+/* the testimonial sits on paper, so the light ink must become dark ink */
+#words .ink-light{
+  background-color:var(--midnight) !important;
+  background-image:url('../assets/textures/wave-ink-hero.jpg') !important;
+  background-size:230% auto !important;
+  background-position:20% 40% !important;
+  -webkit-background-clip:text !important;background-clip:text !important;
+  -webkit-text-fill-color:transparent !important;color:transparent !important;
+}
+#words .quote__attr .label{color:var(--ink) !important}
+#words .quote__mark{color:var(--mist) !important}
+
+/* ============================================================
+   63 · Solid display ink everywhere
+   Text-clipped texture reads pale on paper; the headline is set
+   solid, and the wave pattern lives on the section, not the type.
+   ============================================================ */
+h1.h1-ink, h2.h2, .display-ink, .ink-light, .quote blockquote{
+  -webkit-text-fill-color:currentColor !important;
+  background-image:none !important;
+  background-color:transparent !important;
+  -webkit-background-clip:border-box !important;
+  background-clip:border-box !important;
+}
+h2.h2.display-ink{color:var(--midnight) !important}
+#words .ink-light{color:var(--midnight) !important}
+.hero .h1-ink .ln > i{color:var(--midnight) !important}
+.hero .h1-ink .ln > i .thin{color:var(--estate) !important}
+.ink-light, .display-ink{color:var(--midnight) !important}
+
+/* numbers and captions keep full contrast */
+.stat .num{color:var(--midnight) !important;opacity:1 !important}
+.stat .cap{color:var(--steel) !important;opacity:1 !important}
+
+/* hints are gone; keep the field rhythm */
+.q__hint{display:none !important}
+
+/* one Book in the header at every width */
+@media (max-width:1080px){
+  .header .header__cta a.btn.btn--sm:not(.header__book){display:none !important}
+}

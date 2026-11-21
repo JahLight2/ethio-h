@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Contact — Ethio H Cleaning Service</title>
-<meta name="description" content="Schedule residence care with Ethio H. Tell us the rooms, the surfaces and the timing; we reply within one business day with a time for the survey.">
+<meta name="description" content="Ethio H. Private residence care in Toronto.">
 <meta name="theme-color" content="#001D39">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -32,7 +32,8 @@
       <a href="contact.html" class="is-active">Contact</a>
     </nav>
     <div class="header__cta">
-      <a href="tel:+14160000000" class="btn btn--sm">Call the house <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
+      <a href="booking-page/index.html" class="btn btn--sm">Book <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
+      <a href="booking-page/index.html" class="btn btn--sm header__book">Book</a>
       <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
@@ -43,15 +44,35 @@
     <img src="assets/img/logo-lockup-mist.png" alt="Ethio H Cleaning Service">
     <button class="menu__close" aria-label="Close menu"><span></span></button>
   </div>
-  <nav aria-label="Mobile">
-    <a class="menu__link" href="index.html"><small>01</small>Home</a>
-    <a class="menu__link" href="services.html"><small>02</small>Services</a>
-    <a class="menu__link" href="contact.html"><small>03</small>Contact</a>
-  </nav>
-    <div class="menu__foot">
-    <div><small>Call or write</small><a href="tel:+14160000000">+1 416 000 0000</a></div>
-    <div><small>Email</small><a href="mailto:care@ethioh.ca">care@ethioh.ca</a></div>
-    <div><small>Studio</small><span>Toronto, Canada</span></div>
+
+  <div class="menu__body">
+    <p class="kicker kicker--bare">Contact</p>
+
+    <div class="menu__rows">
+      <a class="menu__row" href="tel:+14160000000">
+        <small>Phone</small>
+        <span>+1 416 000 0000</span>
+      </a>
+      <a class="menu__row" href="mailto:care@ethioh.ca">
+        <small>Email</small>
+        <span>care@ethioh.ca</span>
+      </a>
+      <a class="menu__row" href="https://wa.me/14160000000">
+        <small>WhatsApp</small>
+        <span>Same number</span>
+      </a>
+      <div class="menu__row">
+        <small>Hours</small>
+        <span>Mon – Sat · 07:00 – 18:00</span>
+      </div>
+      <div class="menu__row">
+        <small>Area</small>
+        <span>Toronto · The Annex · Rosedale · Forest Hill</span>
+      </div>
+    </div>
+
+    <a href="booking-page/index.html" class="btn menu__book">Book a visit
+      <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
   </div>
 </div>
 
@@ -64,7 +85,6 @@
       <span class="ln"><i>Tell us about</i></span>
       <span class="ln"><i>the <span class="thin">residence.</span></i></span>
     </h1>
-    <p class="rv" data-d="1" data-split>A short note is enough: the rooms, the surfaces that need attention, and when you would like us to arrive. We reply within one business day.</p>
     <div class="phero__meta rv" data-d="2">
       <div><span>Reply within</span><b>One business day</b></div>
       <div><span>Survey</span><b>45 minutes, no cost</b></div>
@@ -98,7 +118,6 @@
             <!-- 01 · name -->
             <div class="step is-active" data-step="1" data-label="01 — Your name">
               <label class="q" for="name">Who are we <em>writing to?</em></label>
-              <p class="q__hint">The name the household uses.</p>
               <input class="q__input" id="name" name="name" type="text" autocomplete="name" required placeholder="First and family name">
               <span class="msg">A name, please.</span>
             </div>
@@ -106,7 +125,6 @@
             <!-- 02 · phone -->
             <div class="step" data-step="2" data-label="02 — Phone">
               <label class="q" for="phone">A number we can <em>reach you on.</em></label>
-              <p class="q__hint">Mobile or WhatsApp. We use it once, to confirm the survey.</p>
               <input class="q__input" id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 416 000 0000">
               <span class="msg">A phone number, please.</span>
             </div>
@@ -114,7 +132,6 @@
             <!-- 03 · email -->
             <div class="step" data-step="3" data-label="03 — Email">
               <label class="q" for="email">Where the written <em>reply goes.</em></label>
-              <p class="q__hint">One message with the scope and the figure.</p>
               <input class="q__input" id="email" name="email" type="email" autocomplete="email" required placeholder="name@example.com">
               <span class="msg">Check the address.</span>
             </div>
@@ -122,7 +139,6 @@
             <!-- 04 · neighbourhood -->
             <div class="step" data-step="4" data-label="04 — Neighbourhood">
               <label class="q" for="neighbourhood">Which part of <em>Toronto?</em></label>
-              <p class="q__hint">We work the six areas below. Beyond them, ask.</p>
               <div class="q__chips" id="nbh-chips">
                 <button type="button" class="chip" data-for="neighbourhood" data-value="The Annex">The Annex</button>
                 <button type="button" class="chip" data-for="neighbourhood" data-value="Rosedale">Rosedale</button>
@@ -139,7 +155,6 @@
             <!-- 05 · residence -->
             <div class="step" data-step="5" data-label="05 — Residence">
               <label class="q" for="residence">The kind of <em>home.</em></label>
-              <p class="q__hint">It sets the crew and the hours, nothing else.</p>
               <div class="q__chips" id="res-chips">
                 <button type="button" class="chip" data-for="residence" data-value="House — up to 2,500 sq ft">House — up to 2,500 sq ft</button>
                 <button type="button" class="chip" data-for="residence" data-value="House — 2,500 to 5,000 sq ft">House — 2,500 to 5,000 sq ft</button>
@@ -154,7 +169,6 @@
             <!-- 06 · service -->
             <div class="step" data-step="6" data-label="06 — Service">
               <label class="q" for="service">What should we <em>take on?</em></label>
-              <p class="q__hint">One visit, or a standing arrangement.</p>
               <div class="q__chips" id="svc-chips">
                 <button type="button" class="chip" data-for="service" data-value="Residence care — weekly">Residence care — weekly</button>
                 <button type="button" class="chip" data-for="service" data-value="Residence care — fortnightly">Residence care — fortnightly</button>
@@ -172,7 +186,6 @@
             <!-- 07 · date & time -->
             <div class="step" data-step="7" data-label="07 — Date &amp; time">
               <label class="q">Choose a <em>day and window.</em></label>
-              <p class="q__hint">Blue is taken. Clear is yours.</p>
 
               <div class="cal2" id="cal">
                 <div class="cal2__stage">
@@ -215,7 +228,7 @@
                 <textarea id="notes" name="notes" rows="3" placeholder="The rooms, the surfaces, the access — anything we should know before we arrive."></textarea>
               </div>
 
-              <p class="form-note" style="margin-top:22px">The survey is free and takes forty-five minutes. We reply within one business day.</p>
+              <p class="form-note" style="margin-top:22px">Free survey · 45 minutes.</p>
             </div>
 
             <div class="booker__nav">
@@ -233,7 +246,7 @@
         <div class="form-success" id="booking-success" role="status" aria-live="polite">
           <div class="form-success__wave" aria-hidden="true"></div>
           <h3>Received.<br>We will write back.</h3>
-          <p data-mode>The request is in our schedule. We reply within one business day with a time for the survey.</p>
+          <p data-mode>Request received.</p>
           <div class="ref"><span>Reference</span><b data-ref>EH-0000-0000</b></div>
         </div>
       </div>
@@ -244,7 +257,7 @@
           <h4>Direct</h4>
           <a href="tel:+14160000000">+1 416 000 0000</a>
           <a href="mailto:care@ethioh.ca">care@ethioh.ca</a>
-          <p style="margin-top:8px">WhatsApp on the same number. Voice notes are welcome.</p>
+          <p style="margin-top:8px">WhatsApp on the same number.</p>
         </div>
         <div class="side-card">
           <h4>Hours</h4>
@@ -298,31 +311,21 @@
             <text class="lbl" x="60" y="236" text-anchor="middle" style="opacity:.7">Lake Ontario</text>
           </svg>
         </div>
-        <p class="price-note" style="margin-top:14px">Residences beyond the core are quoted with transport included in the figure.</p>
+        <p class="price-note" style="margin-top:14px"></p>
       </aside>
     </div>
   </div>
 </section>
 
 
-<section class="sec sec--midnight sec--tight" data-theme="dark">
-  <div class="wrap">
-    <div class="quote" style="align-items:center">
-      <div class="quote__mark" style="color:rgba(189,216,233,.25)">“</div>
-      <div class="quote__body">
-        <blockquote style="color:var(--mist);font-size:clamp(20px,2.5vw,34px)">Say “Schedule residence care,” not <em style="color:var(--sky)">“Discover perfection.”</em></blockquote>
-        <div class="quote__attr"><span class="label" style="color:var(--mist)">Our writing standard</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 </main>
 
 <footer class="footer" data-theme="dark">
   <div class="wrap footer__top">
     <div class="footer__mark">
       <img src="assets/img/logo-lockup-mist.png" alt="Ethio H Cleaning Service">
-      <p>Private estate care. Toronto, Canada. Edition 02.</p>
+      <p>Toronto, Canada.</p>
     </div>
         <div class="footer__col"><h4>Reach us</h4><a href="tel:+14160000000">+1 416 000 0000</a><a href="mailto:care@ethioh.ca">care@ethioh.ca</a><a href="contact.html">WhatsApp</a></div>
     <div class="footer__col"><h4>Hours</h4><p>Mon – Sat · 07:00 – 18:00</p><p>Sunday by arrangement</p></div>
@@ -330,7 +333,7 @@
   </div>
   <div class="wrap footer__bottom">
     <span>© <span data-year>2026</span> Ethio H Cleaning Service</span>
-    <span>Identity by Ethio H · Built for quiet rooms</span>
+    <span>Ethio H</span>
   </div>
   <div class="footer__giant" aria-hidden="true">ETHIO H</div>
 </footer>

@@ -32,7 +32,8 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header__cta">
-      <a href="booking-page/index.html" class="btn btn--sm">Schedule care <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
+      <a href="booking-page/index.html" class="btn btn--sm">Book <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
+      <a href="booking-page/index.html" class="btn btn--sm header__book">Book</a>
       <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
@@ -43,15 +44,35 @@
     <img src="assets/img/logo-lockup-mist.png" alt="Ethio H Cleaning Service">
     <button class="menu__close" aria-label="Close menu"><span></span></button>
   </div>
-  <nav aria-label="Mobile">
-    <a class="menu__link" href="index.html"><small>01</small>Home</a>
-    <a class="menu__link" href="services.html"><small>02</small>Services</a>
-    <a class="menu__link" href="contact.html"><small>03</small>Contact</a>
-  </nav>
-    <div class="menu__foot">
-    <div><small>Call or write</small><a href="tel:+14160000000">+1 416 000 0000</a></div>
-    <div><small>Email</small><a href="mailto:care@ethioh.ca">care@ethioh.ca</a></div>
-    <div><small>Studio</small><span>Toronto, Canada</span></div>
+
+  <div class="menu__body">
+    <p class="kicker kicker--bare">Contact</p>
+
+    <div class="menu__rows">
+      <a class="menu__row" href="tel:+14160000000">
+        <small>Phone</small>
+        <span>+1 416 000 0000</span>
+      </a>
+      <a class="menu__row" href="mailto:care@ethioh.ca">
+        <small>Email</small>
+        <span>care@ethioh.ca</span>
+      </a>
+      <a class="menu__row" href="https://wa.me/14160000000">
+        <small>WhatsApp</small>
+        <span>Same number</span>
+      </a>
+      <div class="menu__row">
+        <small>Hours</small>
+        <span>Mon – Sat · 07:00 – 18:00</span>
+      </div>
+      <div class="menu__row">
+        <small>Area</small>
+        <span>Toronto · The Annex · Rosedale · Forest Hill</span>
+      </div>
+    </div>
+
+    <a href="booking-page/index.html" class="btn menu__book">Book a visit
+      <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
   </div>
 </div>
 
@@ -60,12 +81,11 @@
 <section class="phero" data-theme="dark">
   <div class="phero__bg" data-parallax="0.06" aria-hidden="true"></div>
   <div class="wrap phero__in">
-    <p class="kicker rv">Services · Edition 02</p>
+    <p class="kicker rv">Services </p>
     <h1 data-lines>
       <span class="ln"><i>Every surface,</i></span>
       <span class="ln"><i><span class="thin">named</span> and cared for.</i></span>
     </h1>
-    <p class="rv" data-d="1" data-split>Six services, one standard. Each is scoped in writing before we arrive, priced to that scope, and checked room by room before we leave.</p>
     <div class="phero__meta rv" data-d="2">
       <div><span>Registered</span><b>Six surfaces</b></div>
       <div><span>Minimum visit</span><b>Three hours</b></div>
@@ -91,7 +111,6 @@
         <p class="kicker rv">01 — What we do</p>
         <h2 class="h2 display-ink" style="margin-top:22px"><span class="ln"><i>Six services.</i></span></h2>
       </div>
-      <p class="lede sec-head__r rv" data-d="1" data-split>Prices are starting points for a standard residence. After the survey you receive one figure, fixed to one page.</p>
     </div>
 
     <div class="svc-detail">
@@ -100,7 +119,6 @@
         <span class="svc-detail__idx">01</span>
         <div>
           <h2>Residence care</h2>
-          <p>A recurring visit for the whole house. The same team, the same route through the rooms, the same finishing kit — so nothing is decided twice.</p>
           <div class="svc-detail__price"><b>From $320</b><span>per visit · 3–5 hours</span></div>
         </div>
         <div>
@@ -120,7 +138,6 @@
         <span class="svc-detail__idx">02</span>
         <div>
           <h2>Glass &amp; light</h2>
-          <p>Frameless panes, glazed walls, skylights and glass doors. We work with filtered water and a blade, so the finish is streak-free without a film.</p>
           <div class="svc-detail__price"><b>From $150</b><span>per elevation · interior</span></div>
         </div>
         <div>
@@ -139,7 +156,6 @@
         <span class="svc-detail__idx">03</span>
         <div>
           <h2>Stone &amp; marble</h2>
-          <p>Honed marble, travertine and terrazzo need the opposite of a strong cleaner. We use pH-balanced agents, work in small sections, and dry as we go.</p>
           <div class="svc-detail__price"><b>On survey</b><span>priced per sq ft after inspection</span></div>
         </div>
         <div>
@@ -158,7 +174,6 @@
         <span class="svc-detail__idx">04</span>
         <div>
           <h2>Linen &amp; interiors</h2>
-          <p>Beds remade to the order the house was photographed in; upholstery vacuumed and refreshed; curtains and blinds dusted at the heading as well as the hem.</p>
           <div class="svc-detail__price"><b>From $95</b><span>per room</span></div>
         </div>
         <div>
@@ -177,7 +192,6 @@
         <span class="svc-detail__idx">05</span>
         <div>
           <h2>Brass &amp; fixtures</h2>
-          <p>Unlacquered brass, chrome and bronze. The patina stays; the water spots, fingerprints and soap film do not.</p>
           <div class="svc-detail__price"><b>From $80</b><span>per residence</span></div>
         </div>
         <div>
@@ -196,7 +210,6 @@
         <span class="svc-detail__idx">06</span>
         <div>
           <h2>Estate opening</h2>
-          <p>A full team, planned days ahead, for a house opened after a season away. Rooms are brought back in a set order so the house is usable from the first evening.</p>
           <div class="svc-detail__price"><b>By arrangement</b><span>team of four to six</span></div>
         </div>
         <div>
@@ -224,7 +237,6 @@
           <span class="ln"><i>one figure.</i></span>
         </h2>
       </div>
-      <p class="lede sec-head__r rv" data-d="1" data-split>Indicative rates for a private residence inside Toronto. The surveyed figure can be lower — it is rarely higher.</p>
     </div>
 
     <table class="price-table rv">
@@ -241,7 +253,7 @@
         <tr><td>Estate opening</td><td>Per project</td><td>From $1,900</td></tr>
       </tbody>
     </table>
-    <p class="price-note rv">Prices include products, water and the finishing kit. Transport inside the city core is included; beyond it, quoted with the scope.</p>
+    <p class="price-note rv">Products, water and kit included.</p>
   </div>
 </section>
 
@@ -252,13 +264,12 @@
       <div class="method__aside">
         <p class="kicker rv">03 — How a visit runs</p>
         <h2 class="h2" data-lines><span class="ln"><i>Nothing</i></span><span class="ln"><i>improvised.</i></span></h2>
-        <p class="lede rv" data-d="1" data-split>The same four steps on every visit, in the same order, recorded on the same sheet.</p>
       </div>
       <div class="method__steps">
-        <div class="mstep rv"><span class="mstep__idx">01</span><div><h3>Arrive</h3><p>A uniformed team at the agreed hour, with its own water, cloths, blades and finishing kit. Nothing is borrowed from the house.</p></div></div>
-        <div class="mstep rv"><span class="mstep__idx">02</span><div><h3>Work in order</h3><p>Top to bottom, dry before wet, stone before glass. The route is the one written on your scope page.</p></div></div>
-        <div class="mstep rv"><span class="mstep__idx">03</span><div><h3>Check in the light</h3><p>Every glass and brass surface is inspected against the light you will see it in — not the light we worked in.</p></div></div>
-        <div class="mstep rv"><span class="mstep__idx">04</span><div><h3>Hand over</h3><p>We walk the rooms with you and correct anything on the spot. The sheet is signed and kept for the next visit.</p></div></div>
+        <div class="mstep rv"><span class="mstep__idx">01</span><div><h3>Arrive</h3></div></div>
+        <div class="mstep rv"><span class="mstep__idx">02</span><div><h3>Work in order</h3></div></div>
+        <div class="mstep rv"><span class="mstep__idx">03</span><div><h3>Check in the light</h3></div></div>
+        <div class="mstep rv"><span class="mstep__idx">04</span><div><h3>Hand over</h3></div></div>
       </div>
     </div>
   </div>
@@ -270,31 +281,16 @@
     <div class="sec-head" style="margin-bottom:clamp(36px,4vw,56px)">
       <div data-lines>
         <p class="kicker rv">04 — Questions</p>
-        <h2 class="h2" style="margin-top:22px"><span class="ln"><i>Asked, answered.</i></span></h2>
+        <h2 class="h2" style="margin-top:22px"><span class="ln"><i>Questions.</i></span></h2>
       </div>
     </div>
-    <div class="acc">
-      <div class="acc__item open">
-        <button class="acc__btn" aria-expanded="true"><span>Do we need to be home?</span><span class="acc__ico"></span></button>
-        <div class="acc__panel"><div><p>No. Many clients hand us a key or leave a gate code. We prefer that one named person is reachable by phone during the visit, and we never admit anyone else to the residence while we work.</p></div></div>
-      </div>
-      <div class="acc__item">
-        <button class="acc__btn" aria-expanded="false"><span>Do you bring your own products and water?</span><span class="acc__ico"></span></button>
-        <div class="acc__panel"><div><p>Yes — cloths, blades, filtered water and pH-balanced agents all arrive with the team. If a residence has a preferred product or a finish we have not met before, we use it after testing a small area.</p></div></div>
-      </div>
-      <div class="acc__item">
-        <button class="acc__btn" aria-expanded="false"><span>Can you care for marble and brass safely?</span><span class="acc__ico"></span></button>
-        <div class="acc__panel"><div><p>That is the work we are known for. Stone is cleaned with neutral agents and dried as we go; brass is polished with the patina kept intact. Acidic and abrasive products never touch either surface.</p></div></div>
-      </div>
-      <div class="acc__item">
-        <button class="acc__btn" aria-expanded="false"><span>What if something is missed?</span><span class="acc__ico"></span></button>
-        <div class="acc__panel"><div><p>Tell us within 24 hours and the same team returns to correct it at no charge. The handover sheet makes it easy to see exactly what was agreed for that room.</p></div></div>
-      </div>
-      <div class="acc__item">
-        <button class="acc__btn" aria-expanded="false"><span>Which areas do you cover?</span><span class="acc__ico"></span></button>
-        <div class="acc__panel"><div><p>The Annex, Rosedale, Forest Hill, Yorkville, Lawrence Park and the Bridle Path. Residences beyond the core are quoted with transport included in the figure.</p></div></div>
-      </div>
-    </div>
+    <ul class="qlist">
+      <li class="qlist__row rv"><span class="qlist__idx">01</span><span>Do we need to be home?</span></li>
+      <li class="qlist__row rv"><span class="qlist__idx">02</span><span>Do you bring your own products and water?</span></li>
+      <li class="qlist__row rv"><span class="qlist__idx">03</span><span>Can you care for marble and brass safely?</span></li>
+      <li class="qlist__row rv"><span class="qlist__idx">04</span><span>What if something is missed?</span></li>
+      <li class="qlist__row rv"><span class="qlist__idx">05</span><span>Which areas do you cover?</span></li>
+    </ul>
   </div>
 </section>
 
@@ -308,10 +304,9 @@
     <div class="cta__title">
       <p class="kicker rv" style="color:var(--sky)">Next step</p>
       <h2 class="h2 rv" data-d="1" style="margin-top:20px">Book the survey.<br>Then decide.</h2>
-      <p class="lede rv" data-d="2" data-split>Forty-five minutes, no cost, no obligation. You will know the scope and the figure before anyone lifts a cloth.</p>
     </div>
     <div class="cta__act">
-      <a href="booking-page/index.html" class="btn btn--light magnetic">Schedule residence care
+      <a href="booking-page/index.html" class="btn btn--light magnetic">Book
         <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
       <a class="cta__phone magnetic" href="tel:+14160000000">+1 416 000 0000</a>
     </div>
@@ -323,7 +318,6 @@
   <div class="wrap footer__top">
     <div class="footer__mark">
       <img src="assets/img/logo-lockup-mist.png" alt="Ethio H Cleaning Service">
-      <p>Private estate care. Toronto, Canada. Edition 02.</p>
     </div>
         <div class="footer__col"><h4>Reach us</h4><a href="tel:+14160000000">+1 416 000 0000</a><a href="mailto:care@ethioh.ca">care@ethioh.ca</a><a href="contact.html">WhatsApp</a></div>
     <div class="footer__col"><h4>Hours</h4><p>Mon – Sat · 07:00 – 18:00</p><p>Sunday by arrangement</p></div>

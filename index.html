@@ -34,7 +34,8 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header__cta">
-      <a href="booking-page/index.html" class="btn btn--sm">Schedule care <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
+      <a href="booking-page/index.html" class="btn btn--sm">Book <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
+      <a href="booking-page/index.html" class="btn btn--sm header__book">Book</a>
       <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
@@ -46,32 +47,44 @@
     <img src="assets/img/logo-lockup-mist.png" alt="Ethio H Cleaning Service">
     <button class="menu__close" aria-label="Close menu"><span></span></button>
   </div>
-  <nav aria-label="Mobile">
-    <a class="menu__link" href="index.html"><small>01</small>Home</a>
-    <a class="menu__link" href="services.html"><small>02</small>Services</a>
-    <a class="menu__link" href="contact.html"><small>03</small>Contact</a>
-  </nav>
-  <div class="menu__foot">
-    <span>+1 416 000 0000</span>
-    <span>care@ethioh.ca</span>
-    <span>Toronto</span>
+
+  <div class="menu__body">
+    <p class="kicker kicker--bare">Contact</p>
+
+    <div class="menu__rows">
+      <a class="menu__row" href="tel:+14160000000">
+        <small>Phone</small>
+        <span>+1 416 000 0000</span>
+      </a>
+      <a class="menu__row" href="mailto:care@ethioh.ca">
+        <small>Email</small>
+        <span>care@ethioh.ca</span>
+      </a>
+      <a class="menu__row" href="https://wa.me/14160000000">
+        <small>WhatsApp</small>
+        <span>Same number</span>
+      </a>
+      <div class="menu__row">
+        <small>Hours</small>
+        <span>Mon – Sat · 07:00 – 18:00</span>
+      </div>
+      <div class="menu__row">
+        <small>Area</small>
+        <span>Toronto · The Annex · Rosedale · Forest Hill</span>
+      </div>
+    </div>
+
+    <a href="booking-page/index.html" class="btn menu__book">Book a visit
+      <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
   </div>
 </div>
 
-<!-- ============ HERO : the glass wipe ============ -->
+<!-- ============ HERO ============ -->
 <main>
-<section class="hero is-steam" id="top" data-theme="light"
-         data-clean="assets/img/hero-estate.jpg"
-         data-fog="assets/img/hero-fog.jpg">
+<section class="hero hero--still" id="top" data-theme="light"
+         data-clean="assets/img/hero-estate.jpg">
   <div class="hero__stage">
-    <canvas class="hero__canvas hero__fog" aria-hidden="true"></canvas>
     <div class="hero__vignette" aria-hidden="true"></div>
-
-    <!-- the mark resting on the glass, written by the squeegee -->
-    <div class="hero__center">
-      <img class="hero__center-mark" src="assets/img/logo-word-midnight.png" alt="Ethio H">
-      <span class="hero__center-sub">Cleaning service · Edition 02</span>
-    </div>
 
     <div class="hero__copy">
       <div data-lines>
@@ -80,19 +93,14 @@
           <span class="ln"><i>The quiet</i></span>
           <span class="ln"><i>art of <span class="thin">clean</span></i></span>
         </h1>
-        <p class="hero__sub" data-split>We care for the glass, stone, brass and linen of private homes — arriving on time, working room by room, and leaving nothing behind but the finish.</p>
         <div class="hero__actions">
-          <a href="booking-page/index.html" class="btn magnetic">Schedule residence care <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
-          <a href="services.html" class="btn btn--ghost magnetic">See all services</a>
+          <a href="booking-page/index.html" class="btn magnetic">Book a visit <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
+          <a href="services.html" class="btn btn--ghost magnetic">Services</a>
         </div>
-      </div>
-      <div class="hero__aside">
-        <span class="scroll-cue"><i></i> Scroll to clear the glass</span>
       </div>
     </div>
 
     <div class="hero__brandmark"><img src="assets/img/logo-lockup-midnight.png" alt="Ethio H"></div>
-    <div class="hero__counter"><span class="hero__num">00</span><small>% clear</small></div>
   </div>
 </section>
 
@@ -115,7 +123,7 @@
           <span class="ln"><i>with a clear plan.</i></span>
         </h2>
       </div>
-      <p class="lede standard__lede rv" data-d="1" data-split>We confirm the rooms, surfaces and timing before each visit. Then we work with the same attention you would give a room you have just finished.</p>
+      
     </div>
 
     <div class="stat-row">
@@ -160,42 +168,36 @@
       <a href="services.html#residence" class="svc-row" data-preview="a" aria-label="Residence care">
         <span class="svc-row__idx">01</span>
         <span class="svc-row__name">Residence care</span>
-        <span class="svc-row__desc">Weekly or fortnightly visits covering every room, from the highest ledge to the last light switch.</span>
         <span class="svc-row__meta"><span class="svc-row__price">From $320 / visit</span>
           <span class="svc-row__arr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13 13 3M5 3h8v8"/></svg></span></span>
       </a>
       <a href="services.html#glass" class="svc-row" data-preview="b" aria-label="Glass and light">
         <span class="svc-row__idx">02</span>
         <span class="svc-row__name">Glass &amp; light</span>
-        <span class="svc-row__desc">Frameless panes, skylights and glazed walls cleaned streak-free with filtered water and a blade.</span>
         <span class="svc-row__meta"><span class="svc-row__price">From $150</span>
           <span class="svc-row__arr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13 13 3M5 3h8v8"/></svg></span></span>
       </a>
       <a href="services.html#stone" class="svc-row" data-preview="c" aria-label="Stone and marble">
         <span class="svc-row__idx">03</span>
         <span class="svc-row__name">Stone &amp; marble</span>
-        <span class="svc-row__desc">pH-balanced care for honed marble, travertine and terrazzo — cleaned, dried, and left without a mark.</span>
         <span class="svc-row__meta"><span class="svc-row__price">On survey</span>
           <span class="svc-row__arr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13 13 3M5 3h8v8"/></svg></span></span>
       </a>
       <a href="services.html#linen" class="svc-row" data-preview="d" aria-label="Linen and interiors">
         <span class="svc-row__idx">04</span>
         <span class="svc-row__name">Linen &amp; interiors</span>
-        <span class="svc-row__desc">Beds remade to their original order, upholstery refreshed, curtains and soft furnishings cared for.</span>
         <span class="svc-row__meta"><span class="svc-row__price">From $95</span>
           <span class="svc-row__arr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13 13 3M5 3h8v8"/></svg></span></span>
       </a>
       <a href="services.html#brass" class="svc-row" data-preview="e" aria-label="Brass and fixtures">
         <span class="svc-row__idx">05</span>
         <span class="svc-row__name">Brass &amp; fixtures</span>
-        <span class="svc-row__desc">Polished taps, handles and handrails, with the patina unharmed and the water spots gone.</span>
         <span class="svc-row__meta"><span class="svc-row__price">From $80</span>
           <span class="svc-row__arr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13 13 3M5 3h8v8"/></svg></span></span>
       </a>
       <a href="services.html#estate" class="svc-row" data-preview="f" aria-label="Estate opening">
         <span class="svc-row__idx">06</span>
         <span class="svc-row__name">Estate opening</span>
-        <span class="svc-row__desc">A full team visit, planned days in advance, for a house opening after a season away.</span>
         <span class="svc-row__meta"><span class="svc-row__price">By arrangement</span>
           <span class="svc-row__arr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13 13 3M5 3h8v8"/></svg></span></span>
       </a>
@@ -213,69 +215,13 @@
   <img src="assets/img/hero-estate.jpg" data-k="f" alt="">
 </div>
 
-<!-- ============ METHOD ============ -->
-<section class="sec sec--paper" id="method" data-rail="Method">
-  <div class="wrap">
-    <div class="method">
-      <div class="method__aside">
-        <p class="kicker rv">03 — Method</p>
-        <h2 class="h2" data-lines>
-          <span class="ln"><i>Quiet</i></span>
-          <span class="ln"><i>by design.</i></span>
-        </h2>
-        <p class="lede rv" data-d="1" data-split>Four steps, no improvisation. The same plan every visit, written down and signed off before we begin.</p>
-        <a href="booking-page/index.html" class="btn btn--ghost magnetic rv" data-d="2" style="margin-top:32px">Plan a first visit
-          <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
-      </div>
-
-      <div class="method__steps">
-        <div class="mstep rv">
-          <span class="mstep__idx">01</span>
-          <div>
-            <h3>The survey</h3>
-            <p>We walk the residence with you, room by room, and note the surfaces that need care and the ones that should be left alone.</p>
-            <div class="mstep__meta"><span class="chip">No cost</span><span class="chip">45 minutes</span></div>
-          </div>
-        </div>
-        <div class="mstep rv">
-          <span class="mstep__idx">02</span>
-          <div>
-            <h3>The scope</h3>
-            <p>You receive one page: the rooms, the surfaces, the products, the time. The price is fixed to that page, not to an estimate.</p>
-            <div class="mstep__meta"><span class="chip">Written</span><span class="chip">One page</span></div>
-          </div>
-        </div>
-        <div class="mstep rv">
-          <span class="mstep__idx">03</span>
-          <div>
-            <h3>The visit</h3>
-            <p>A uniformed team arrives at the agreed hour with its own water, cloths and finishing kit. Nothing from the house is borrowed.</p>
-            <div class="mstep__meta"><span class="chip">On time</span><span class="chip">Discreet</span></div>
-          </div>
-        </div>
-        <div class="mstep rv">
-          <span class="mstep__idx">04</span>
-          <div>
-            <h3>The handover</h3>
-            <p>We walk the rooms with you again and correct anything on the spot. You sign the sheet; the record is kept for next time.</p>
-            <div class="mstep__meta"><span class="chip">Checked</span><span class="chip">Recorded</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============ WAVE BAND ============ -->
 <section class="waveband" data-theme="dark">
   <div class="waveband__bg" data-parallax="0.08"></div>
   <div class="wrap waveband__in">
-    <p class="kicker rv" style="justify-content:center">Edition 02 · Private estate care</p>
-    <div class="waveband__logo rv" data-d="1">
-      <img src="assets/img/logo-word-inlay.png" alt="Ethio H">
-    </div>
-    <p class="waveband__quote rv" data-d="2">“The marble has been cleaned and the brass <em>polished</em>.”</p>
-    <p class="waveband__attr rv" data-d="3">The only line we write on the handover sheet</p>
+    <p class="kicker rv" style="justify-content:center">Private estate care</p>
+    <p class="waveband__quote rv" data-d="1">“The marble has been cleaned and the brass <em>polished</em>.”</p>
   </div>
 </section>
 
@@ -293,11 +239,8 @@
         </blockquote>
         <div class="quote__attr">
           <span class="label" style="color:var(--ink)">Private client</span>
-          <span>Rosedale · House of 5,400 sq ft</span>
+          <span>Rosedale</span>
         </div>
-      </div>
-      <div class="quote__side rv" data-d="1">
-        Client names are never published. References are given privately, on request, from owners in the same neighbourhoods.
       </div>
     </div>
   </div>
@@ -313,11 +256,10 @@
   <div class="wrap cta__in">
     <div class="cta__title">
       <p class="kicker rv" style="color:var(--sky)">Begin</p>
-      <h2 class="h2 rv" data-d="1" style="margin-top:20px">Tell us about<br>the residence.</h2>
-      <p class="lede rv" data-d="2" data-split>A short note about the rooms, the timing and the surfaces. We reply within one business day with a time for the survey.</p>
+      <h2 class="h2 rv" data-d="1" style="margin-top:20px">Book a visit.</h2>
     </div>
     <div class="cta__act">
-      <a href="booking-page/index.html" class="btn btn--light magnetic">Schedule residence care
+      <a href="booking-page/index.html" class="btn btn--light magnetic">Book
         <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
       <a class="cta__phone magnetic" href="tel:+14160000000">+1 416 000 0000</a>
     </div>
@@ -330,7 +272,7 @@
   <div class="wrap footer__top">
     <div class="footer__mark">
       <img src="assets/img/logo-lockup-mist.png" alt="Ethio H Cleaning Service">
-      <p>Private estate care. Toronto, Canada. Edition 02.</p>
+      <p>Toronto, Canada.</p>
     </div>
     <div class="footer__col">
       <h4>The house</h4>
@@ -359,7 +301,6 @@
     <span>© <span data-year>2026</span> Ethio H Cleaning Service</span>
     <span>Identity by Ethio H · Built for quiet rooms</span>
   </div>
-  <div class="footer__giant" aria-hidden="true">ETHIO H</div>
 </footer>
 
 <!-- rail -->
