@@ -170,6 +170,10 @@
 
     const burger = $('.burger');
     if (burger) burger.addEventListener('click', () => toggleMenu());
+    $$('.menu__close, .menu__top img').forEach(el => el.addEventListener('click', (e) => {
+      if (el.tagName === 'IMG') return;
+      e.preventDefault(); toggleMenu(false);
+    }));
     $$('.menu a').forEach(a => a.addEventListener('click', (e) => {
       if (a.getAttribute('href') && a.getAttribute('href').startsWith('#')) toggleMenu(false);
     }));
@@ -455,9 +459,11 @@
       /* ---- 1 · the room, always underneath ---- */
       if (clean) drawCover(ctx, clean, w, h);
       else { ctx.fillStyle = '#001D39'; ctx.fillRect(0, 0, w, h); }
-      if (!fog) return;
-
       const p = progress;
+      // past 80% the water is a memory: it dissolves rather than sitting there
+      const dissolve = clamp((p - 0.80) / 0.14, 0, 1);        // 0 at 80%, gone by 94%
+
+      if (!fog) return;
 
       /* ---- 2 · water floods in from the bottom ---- */
       const inflow = clamp((p - 0.13) / 0.22, 0, 1);        // still holds 0–0.13
@@ -497,12 +503,16 @@
         fctx.globalCompositeOperation = 'destination-in';
         fctx.drawImage(mask, 0, 0);
         fctx.globalCompositeOperation = 'source-over';
+        ctx.save();
+        ctx.globalAlpha = 1 - dissolve;
         ctx.drawImage(fogLayer, 0, 0);
+        ctx.restore();
 
         /* ---- 4 · blade edge while wiping ---- */
-        if (wipe > 0.002 && wipe < 0.99) {
+        if (wipe > 0.002 && wipe < 0.99 && dissolve < 0.999) {
           const frontY = h * (-0.06 + wipe * 1.16);
           ctx.save();
+          ctx.globalAlpha = 1 - dissolve;
           const g2 = ctx.createLinearGradient(0, frontY - h*0.05, 0, frontY);
           g2.addColorStop(0, 'rgba(255,255,255,0)');
           g2.addColorStop(1, 'rgba(255,255,255,.28)');
@@ -645,15 +655,18 @@
         center.style.filter = markOut > 0 ? `blur(${(markOut*5).toFixed(2)}px)` : 'none';
       }
       // headline rises out of the cleared glass
-      const headIn = clamp((p - 0.62) / 0.15, 0, 1);
+      const headIn = clamp((p - 0.60) / 0.16, 0, 1);        // legible by ~0.76
       if (copy) {
         copy.style.opacity = headIn;
         copy.style.transform = `translateY(${(1 - headIn) * 44}px)`;
       }
       if (counter) counter.textContent = String(Math.round(clamp((p-0.34)/0.30,0,1) * 100)).padStart(2, '0');
-      hero.classList.toggle('is-clear', p > 0.90);
-      hero.classList.toggle('is-water', p > 0.13 && p < 0.95);
-      hero.classList.toggle('is-head', p > 0.60);
+      // the water's own lifetime, kept in step with render()
+      const dissolveLocal = clamp((p - 0.80) / 0.14, 0, 1);
+      hero.classList.toggle('is-clear', p > 0.94);
+      hero.classList.toggle('is-water', p > 0.13 && p < 0.94);
+      hero.classList.toggle('is-head', p > 0.56);
+      hero.style.setProperty('--dissolve', (1 - dissolveLocal).toFixed(3));
     }
 
     function onScroll() {

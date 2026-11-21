@@ -1729,9 +1729,9 @@ html,body{overflow-x:clip}
    ============================================================ */
 .h1-ink .ln > i{
   background-color:var(--midnight);
-  background-image:url('../assets/textures/wave-display-soft.jpg');
-  background-size:250% auto;
-  background-position:18% 50%;
+  background-image:url('../assets/textures/wave-ink-hero.jpg');
+  background-size:230% auto;
+  background-position:20% 48%;
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
 }
@@ -1741,3 +1741,154 @@ html,body{overflow-x:clip}
 }
 /* the empty slots strip should not reserve a dashed placeholder */
 .slots:empty{display:none}
+
+/* ============================================================
+   52 · Hero layer order — copy must sit above fog, frost and mark
+   The fog canvas and the ::before frost were painting over the
+   headline (both are children of the stage, so they outrank it).
+   ============================================================ */
+.hero__fog{ z-index: 0 !important; }
+.hero__vignette{ z-index: 1 !important; }
+.hero .hero__stage::before{ z-index: 2 !important; }   /* frost, below everything readable */
+.hero__center{ z-index: 3 !important; }
+.hero__copy,
+.hero__brandmark,
+.hero__counter,
+.hero__hint{ z-index: 5 !important; }
+
+/* the frost is only ever a legibility pane: it must not veil the type on top of it */
+.hero.is-head .hero__stage::before{ opacity: .92; }
+
+/* the copy carries its own soft ground so it reads at any point in the wipe */
+.hero__copy::before{
+  opacity: 1 !important;
+  transition: opacity .7s var(--ease);
+}
+
+/* ============================================================
+   53 · Menu — what shows here is the contact block, nothing else
+   ============================================================ */
+.menu{ padding-top: calc(var(--h-header) + 8px) !important; justify-content: flex-start !important; }
+.menu__top{
+  position:absolute;top:0;left:0;right:0;height:var(--h-header);
+  display:flex;align-items:center;justify-content:space-between;
+  padding-inline:var(--gutter);
+  border-bottom:1px solid var(--hair-light);
+}
+.menu__top img{height:clamp(30px,3vw,38px);width:auto}
+.menu__close{
+  width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--hair-light);color:var(--mist);
+  display:grid;place-items:center;
+  transition:background .3s var(--ease),border-color .3s var(--ease);
+}
+.menu__close:hover{background:rgba(189,216,233,.1);border-color:rgba(189,216,233,.35)}
+.menu__close span{position:relative;width:16px;height:16px;display:block}
+.menu__close span::before,.menu__close span::after{
+  content:"";position:absolute;left:0;top:50%;width:16px;height:1px;background:currentColor;
+}
+.menu__close span::before{transform:rotate(45deg)}
+.menu__close span::after{transform:rotate(-45deg)}
+
+/* the contact lines are the point of this panel — give them room and weight */
+.menu nav{margin-top:clamp(28px,5vw,56px)}
+.menu__foot{
+  margin-top:auto;display:flex;flex-direction:column;gap:10px;
+  font-family:var(--f-sub);font-weight:800;font-size:clamp(13px,1.5vw,16px);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--mist);
+  opacity:1;padding-top:40px;
+}
+.menu__foot a{color:inherit}
+.menu__foot small{
+  display:block;font-size:10px;letter-spacing:.22em;opacity:.45;margin-bottom:4px;
+}
+
+/* the menu owns the screen while it is open — no header fighting it for the corner */
+body.menu-open .header{opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+body.menu-open .menu{z-index:140 !important}
+body.menu-open .menu__top{pointer-events:auto}
+body.menu-open .burger{pointer-events:none}
+
+/* ============================================================
+   54 · The copy needs a real ground, not a whisper
+   The frost sits under the text, so the text supplies its own
+   readable pane. Stronger where the type is, soft at the edges.
+   ============================================================ */
+.hero__copy::before{
+  background:
+    linear-gradient(to top,
+      rgba(246,249,251,.97) 0%,
+      rgba(246,249,251,.95) 42%,
+      rgba(246,249,251,.86) 70%,
+      rgba(246,249,251,0) 100%) !important;
+  left:-8vw !important;right:-8vw !important;bottom:-16vh !important;top:-2vh !important;
+}
+/* and a tighter halo right behind the words themselves */
+.hero__copy::after{
+  content:"";position:absolute;z-index:-1;
+  left:-4vw;right:34%;top:-1vh;bottom:-6vh;
+  background:radial-gradient(72% 88% at 26% 58%,rgba(247,250,252,.92),rgba(247,250,252,.5) 55%,rgba(247,250,252,0) 86%);
+  pointer-events:none;
+}
+/* the display ink must stay Midnight over the glass — the pattern is a whisper, not a wash */
+.h1-ink .ln > i{
+  background-color:var(--midnight) !important;
+  background-blend-mode:normal;
+  -webkit-text-stroke:0;
+}
+.hero h1{text-shadow:0 1px 0 rgba(255,255,255,.35)}
+
+/* ============================================================
+   55 · Headline legibility at the end of the wipe
+   Text-clipped pattern leaves the face soft at 178px: keep the
+   ink solid, let the pattern register as a shadow in the medium.
+   ============================================================ */
+.hero h1 .ln > i{ text-shadow: 0 0 0 transparent; }
+.hero .h1-ink .ln > i{
+  -webkit-text-fill-color: var(--midnight);
+  color: var(--midnight);
+  background-image: linear-gradient(180deg, rgba(0,29,57,.34), rgba(0,29,57,.06) 55%, rgba(10,65,116,.20)) !important;
+  background-color: var(--midnight) !important;
+  background-blend-mode: multiply;
+  background-size: auto, 230% auto;
+  background-position: 0 0, 20% 48%;
+}
+.hero .h1-ink .ln > i .thin{
+  -webkit-text-fill-color: var(--estate);
+  color: var(--estate);
+  background-image: none;
+}
+
+/* ============================================================
+   56 · The dissolve — everything wet leaves by 94%
+   ============================================================ */
+.hero__stage::before{
+  opacity: calc(.92 * var(--dissolve, 1)) !important;
+  transition: none !important;               /* driven frame by frame, not by CSS easing */
+}
+.hero.is-clear .hero__stage::before{opacity:0 !important}
+.hero__copy::before,
+.hero__copy::after{opacity:var(--dissolve, 1)}
+
+/* ============================================================
+   57 · The copy ground is permanent; only the water dissolves.
+   §56 accidentally tied the ground to --dissolve, so the pane
+   disappeared at the very moment the headline was most visible.
+   ============================================================ */
+.hero__copy::before{
+  opacity: 1 !important;
+  background:
+    linear-gradient(to top,
+      rgba(246,249,251,.985) 0%,
+      rgba(246,249,251,.975) 46%,
+      rgba(246,249,251,.94) 74%,
+      rgba(246,249,251,.74) 88%,
+      rgba(246,249,251,0) 100%) !important;
+  left:-9vw !important;right:-9vw !important;
+  top:-6vh !important;bottom:-18vh !important;
+}
+.hero__copy::after{ content:none !important; }
+
+/* the kicker and sub keep their ink against the pane */
+.hero__copy .kicker{ color:var(--estate) !important; }
+.hero__sub{ color:rgba(0,29,57,.82) !important; }
