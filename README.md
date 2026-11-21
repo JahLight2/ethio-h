@@ -1,27 +1,34 @@
 # Ethio H — Cleaning Service
 
-A quiet, scroll-driven site for **Ethio H · Private Estate Care** (Edition 02).
+A quiet, scroll-driven site for **Ethio H · Private Estate Care** (Toronto).
 
-The signature interaction is the hero: the page opens on a **still, clean room** — the mark
-settles on the glass and the room is read in full. Only then does **water** rise into the pane
-(reflecting the room, moving on its own swell), and a wave-shaped blade clears it downward,
-leaving the copy legible on clean glass. The cursor can wipe the water by hand as it passes.
+The landing holds a **still, clean room**: the ETHIO H mark rests on the glass and the headline
+sits low and fully legible from the first frame. Scrolling is a single **cross dissolve** — the mark
+fades first, then the room itself dissolves into the paper of the section below. No wipe, no water,
+no canvas.
 
 ## Pages
 | File | What it is |
 | --- | --- |
-| `index.html` | The glass-wipe hero, the standard, the register (services rows with cursor previews), method, wave band, testimonial, CTA |
-| `services.html` | The six services in detail, price table, process, FAQ accordion |
-| `contact.html` | Residence-care request as a **seven-question wizard** (name → phone → email → neighbourhood → residence → service → date & time) with a Rams-style availability calendar, direct contact, service-area map |
+| `index.html` | The landing (mark + headline, cross dissolve on scroll), the standard, the register, wave band, testimonial, closing CTA |
+| `services.html` | The six services with prices, the price table, how a visit runs, questions |
+| `contact.html` | Residence-care request as a seven-question wizard with an availability calendar, direct contact, service-area map |
+
+Every page carries a single **Book** button in the header; there is no menu.
 
 ## Motion system (`js/site.js`)
-- **Smooth scroll** — Lenis-style lerped wheel + keyboard, honours `prefers-reduced-motion`
-- **Custom cursor** — dot + lerped ring, label states (`drag`, link), inverts over dark sections
-- **Glass wipe** — canvas mask: brand fog image, wave-edge squeegee, wet sheen, dry streaks, pointer trail
+- **Smooth scroll** — lerped wheel + keyboard, honours `prefers-reduced-motion`
+- **Custom cursor** — dot centred in the ring, label states, inverts over dark sections
+- **Landing dissolve** — `initHero()`: mark 0.02–0.30, veil 0.46–0.96, headline hands over 0.88–1.00
 - **Reveals** — line masks (`.ln > i`) for display type, staggered `.rv` fade-ups
 - **Chapter rail** — right-hand index that tracks sections
-- **Service previews** — cursor-following imagery on the register rows
-- **Magnetic buttons**, parallax, counters, before/after drag, accordion
+- **Service previews**, **magnetic buttons**, parallax, counters, accordion
+
+## Copy rules
+- No descriptive paragraphs — names, prices, questions and labels only.
+- Display type is set **solid**. The wave pattern lives in section backgrounds, never clipped
+  into letterforms (it reads washed at display sizes).
+- No logo is ever used as a background.
 
 ## Run locally
 ```bash
@@ -73,7 +80,6 @@ One artwork, four jobs — never a stray image:
 
 | Role | Class | Where |
 | --- | --- | --- |
-| **Ink** — the wave inside display type | `.display-ink`, `.h1-ink`, `.ink-light` | hero `h1`, section `h2`s, the testimonial |
 | **Wash** — one large soft ground per screen | `.pat-wash` | the standard section (Home), the register (Services) |
 | **Edge** — a single tide at a section seam | `.pat-edge--top/--bottom` | register seam, the closing CTA |
 | **Tile** — the pattern at full strength | `.waveband__bg`, `.phero__bg` | the wave band, the services hero |
@@ -88,17 +94,15 @@ seamless with a four-corner wrap blend, then tinted into the brand grounds. A li
 
 | Texture | Job |
 | --- | --- |
-| `wave-display-soft.jpg` | Hero `h1` ink — the quietest register |
-| `wave-display.jpg` | Section `h2` ink |
-| `wave-display-light.jpg` | Ink on dark grounds, wash, edge |
+| `wave-display-light.jpg` | Wash and edge on light grounds |
 | `wave-band.jpg` · `wave-inlay-tile.jpg` · `wave-inlay-light.jpg` · `wave-inlay.jpg` | Full-strength tiles and grounds |
 
 Rules: ink never drops below the navy register (legibility first), one wash per screen, edges are
 cropped not repeated, never mirrored, never over body copy.
 
 ## Right action rail
-Fixed on the right edge (≥1380px wide, ≥620px tall): chapter dots that track the page, plus a
-vertical **Book** pill that goes straight to `contact.html#form`.
+Fixed on the right edge (≥1081px wide): chapter dots that track the page, plus a vertical
+**Book** pill that goes straight to `booking-page/index.html`.
 
 ## Brand tokens used
 - Midnight `#001D39` · Estate `#0A4174` · Steel `#49769F` · Marine `#4E8EA2` · Sea Glass `#6EA2B3` · Sky `#7BBDE8` · Mist `#BDD8E9`
@@ -106,6 +110,6 @@ vertical **Book** pill that goes straight to `contact.html#form`.
 - Logo extracted from the supplied identity artwork; wave texture from `02 - Wave Inlay.png`
 
 ## Placeholders to replace
-- `+1 416 000 0000` · `care@ethioh.ca` — search and replace across the four HTML files
+- `+1 416 000 0000` · `care@ethioh.ca` — search and replace across the three HTML files
 - Prices in `services.html` and the register rows in `index.html`
 - Client testimonial (currently written in the brand voice, attributed privately)
