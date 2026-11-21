@@ -8,7 +8,7 @@ export function Header() {
       <div className="shell flex h-[72px] items-center justify-between gap-6">
         <a href="../index.html" aria-label={`${brand.legal} — home`}>
           <img
-            src="./logo-lockup-mist.png"
+            src="/booking-page/logo-lockup-mist.png"
             alt={brand.legal}
             className="h-[34px] w-auto"
             width={110}

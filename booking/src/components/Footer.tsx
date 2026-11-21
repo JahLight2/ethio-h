@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="booking-footer mt-[clamp(28px,4vw,48px)]">
       <div className="shell booking-footer-inner">
         <a href="../index.html" className="booking-footer-logo" aria-label="Ethio H Cleaning Service — home">
-          <img src="./logo-lockup-mist.png" alt="Ethio H Cleaning Service" />
+          <img src="/booking-page/logo-lockup-mist.png" alt="Ethio H Cleaning Service" />
         </a>
         <div className="booking-footer-meta">
           <span>{footer.bottom}</span>

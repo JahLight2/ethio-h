@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: './',
+  base: '/booking-page/',
   plugins: [react()],
   // the sandbox preview proxies from a *.e2b.app host
   server: {
