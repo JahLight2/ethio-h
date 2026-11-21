@@ -34,61 +34,29 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header__cta">
-      <a href="booking-page/index.html" class="btn btn--sm">Book <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
-      <a href="booking-page/index.html" class="btn btn--sm header__book">Book</a>
-      <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      <a href="booking-page/index.html" class="btn btn--sm header__book">Book
+        <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
     </div>
   </div>
 </header>
 
-<!-- Mobile menu -->
-<div class="menu">
-  <div class="menu__top">
-    <img src="assets/img/logo-lockup-mist.png" alt="Ethio H Cleaning Service">
-    <button class="menu__close" aria-label="Close menu"><span></span></button>
-  </div>
 
-  <div class="menu__body">
-    <p class="kicker kicker--bare">Contact</p>
-
-    <div class="menu__rows">
-      <a class="menu__row" href="tel:+14160000000">
-        <small>Phone</small>
-        <span>+1 416 000 0000</span>
-      </a>
-      <a class="menu__row" href="mailto:care@ethioh.ca">
-        <small>Email</small>
-        <span>care@ethioh.ca</span>
-      </a>
-      <a class="menu__row" href="https://wa.me/14160000000">
-        <small>WhatsApp</small>
-        <span>Same number</span>
-      </a>
-      <div class="menu__row">
-        <small>Hours</small>
-        <span>Mon – Sat · 07:00 – 18:00</span>
-      </div>
-      <div class="menu__row">
-        <small>Area</small>
-        <span>Toronto · The Annex · Rosedale · Forest Hill</span>
-      </div>
-    </div>
-
-    <a href="booking-page/index.html" class="btn menu__book">Book a visit
-      <svg class="arr" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h11M9 3l5 5-5 5"/></svg></a>
-  </div>
-</div>
-
-<!-- ============ HERO ============ -->
+<!-- ============ HERO : the landing ============ -->
 <main>
-<section class="hero hero--still" id="top" data-theme="light"
+<section class="hero hero--land" id="top" data-theme="light"
          data-clean="assets/img/hero-estate.jpg">
   <div class="hero__stage">
+    <div class="hero__room" aria-hidden="true"></div>
+    <div class="hero__veil" aria-hidden="true"></div>
     <div class="hero__vignette" aria-hidden="true"></div>
+
+    <!-- the mark resting on the glass -->
+    <div class="hero__center">
+      <img class="hero__center-mark" src="assets/img/logo-word-midnight.png" alt="Ethio H">
+    </div>
 
     <div class="hero__copy">
       <div data-lines>
-        <p class="kicker">Toronto · Private residences</p>
         <h1 class="h1-ink">
           <span class="ln"><i>The quiet</i></span>
           <span class="ln"><i>art of <span class="thin">clean</span></i></span>
@@ -116,7 +84,6 @@
 <section class="sec sec--paper standard pat-wash pat-wash-light" id="standard" data-rail="Standard">
   <div class="wrap">
     <div class="standard__head">
-      <p class="kicker rv">01 — The standard</p>
       <div class="standard__title" data-lines>
         <h2 class="h2 display-ink">
           <span class="ln"><i>A clean home begins</i></span>
@@ -153,7 +120,6 @@
   <div class="wrap">
     <div class="svc-head">
       <div data-lines>
-        <p class="kicker rv">02 — What we do</p>
         <h2 class="h2" style="margin-top:22px">
           <span class="ln"><i>Everything we</i></span>
           <span class="ln"><i>are trusted with.</i></span>
@@ -220,7 +186,6 @@
 <section class="waveband" data-theme="dark">
   <div class="waveband__bg" data-parallax="0.08"></div>
   <div class="wrap waveband__in">
-    <p class="kicker rv" style="justify-content:center">Private estate care</p>
     <p class="waveband__quote rv" data-d="1">“The marble has been cleaned and the brass <em>polished</em>.”</p>
   </div>
 </section>
@@ -255,7 +220,6 @@
   </svg>
   <div class="wrap cta__in">
     <div class="cta__title">
-      <p class="kicker rv" style="color:var(--sky)">Begin</p>
       <h2 class="h2 rv" data-d="1" style="margin-top:20px">Book a visit.</h2>
     </div>
     <div class="cta__act">

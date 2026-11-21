@@ -168,16 +168,7 @@
     addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    const burger = $('.burger');
-    if (burger) burger.addEventListener('click', () => toggleMenu());
-    $$('.menu__close, .menu__top img').forEach(el => el.addEventListener('click', (e) => {
-      if (el.tagName === 'IMG') return;
-      e.preventDefault(); toggleMenu(false);
-    }));
-    $$('.menu a').forEach(a => a.addEventListener('click', (e) => {
-      if (a.getAttribute('href') && a.getAttribute('href').startsWith('#')) toggleMenu(false);
-    }));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+    /* the menu is gone — the header carries a Book button instead */
   }
   function toggleMenu(force) {
     const open = typeof force === 'boolean' ? force : !document.body.classList.contains('menu-open');
@@ -377,14 +368,62 @@
     if (!hero) return;
     const copy = $('.hero__copy', hero);
     const center = $('.hero__center', hero);
-    if (!copy) return;
+    const brand = $('.hero__brandmark', hero);
+    const room = $('.hero__room', hero);
+    const veil = $('.hero__veil', hero);
+    if (!room) return;
 
-    /* No water, no wipe. The room is the picture; the copy arrives with the page. */
-    copy.style.opacity = '1';
-    copy.style.transform = 'none';
-    if (center) { center.style.opacity = '1'; center.style.transform = 'none'; }
-    hero.classList.add('is-clear', 'is-head');
-    hero.classList.remove('is-steam', 'is-water');
+    /* Landing: the mark rests on the room. On scroll the mark dissolves
+       and the room cross-dissolves toward paper — no water, no wipe.
+       Everything is a plain opacity handoff, so it also holds still
+       perfectly when the reader prefers reduced motion. */
+    const clamp01 = (v) => v < 0 ? 0 : v > 1 ? 1 : v;
+    const range = (p, a, b) => clamp01((p - a) / (b - a));
+
+    function paint(p) {
+      const markOut = range(p, 0.02, 0.30);           // the mark leaves first
+      const veilIn  = range(p, 0.46, 0.96);           // the room dissolves to paper
+      const copyOut = range(p, 0.88, 1);              // the headline hands over last
+
+      if (center) {
+        center.style.opacity = String(1 - markOut);
+        center.style.transform = `translateY(${(-18 * markOut).toFixed(2)}px)`;
+      }
+      if (copy) {
+        /* readable from the very first frame — it only steps aside at the end */
+        copy.style.opacity = String(1 - copyOut);
+        copy.style.transform = `translateY(${-copyOut * 24}px)`;
+      }
+      if (brand) {
+        brand.style.opacity = String(range(p, 0.22, 0.44));
+        brand.style.transform = `translateY(${(1 - range(p, 0.22, 0.44)) * 18}px)`;
+      }
+      if (veil) veil.style.opacity = String(veilIn);
+      hero.classList.toggle('is-head', p > 0.05);
+      hero.style.setProperty('--dissolve', String(1 - veilIn).slice(0, 5));
+    }
+
+    let target = 0, shown = 0, visible = true, raf = 0;
+
+    function read() {
+      const total = hero.offsetHeight - innerHeight;
+      target = clamp01(-hero.getBoundingClientRect().top / Math.max(1, total));
+    }
+    function loop() {
+      raf = requestAnimationFrame(loop);
+      if (!visible) return;
+      shown += (target - shown) * 0.12;
+      if (Math.abs(target - shown) < 0.0005) shown = target;
+      paint(shown);
+    }
+
+    addEventListener('scroll', read, { passive: true });
+    addEventListener('resize', read);
+    new IntersectionObserver(([en]) => { visible = en.isIntersecting; }, { threshold: 0 })
+      .observe(hero);
+
+    if (REDUCED) { paint(0); return; }   // still, legible, no choreography
+    read(); paint(0); loop();
   }
 
   /* ---------------------------------------------------------

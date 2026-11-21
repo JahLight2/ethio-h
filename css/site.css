@@ -2051,3 +2051,114 @@ h2.h2.display-ink{color:var(--midnight) !important}
 @media (max-width:1080px){
   .header .header__cta a.btn.btn--sm:not(.header__book){display:none !important}
 }
+
+/* ============================================================
+   64 · The landing, restored — and a cross dissolve instead of water
+   The room holds the first screen. Scrolling dissolves the mark,
+   then the room itself, into the paper of the page below.
+   ============================================================ */
+.hero--land{height:200vh !important}
+
+.hero--land .hero__stage{
+  position:sticky;top:0;
+  height:100vh;height:100svh;min-height:560px;
+  overflow:hidden;
+  background:var(--paper);
+}
+.hero--land .hero__stage::before,
+.hero--land .hero__stage::after{content:none !important}
+
+/* the room — a layer we can fade, rather than a painted background */
+.hero--land .hero__room{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('../assets/img/hero-estate.jpg');
+  background-size:cover;background-position:center 42%;
+  will-change:transform;
+}
+
+/* paper rising to meet the next section */
+.hero--land .hero__veil{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to bottom,
+    rgba(243,247,249,.55) 0%,
+    rgba(243,247,249,.94) 42%,
+    var(--paper) 100%);
+  opacity:0;will-change:opacity;
+}
+
+/* the mark resting on the room, written large across the middle */
+.hero--land .hero__center{
+  position:absolute;inset:0;z-index:2;
+  display:grid;place-content:center;justify-items:center;
+  padding-bottom:clamp(60px,12vh,140px);
+  transition:opacity .45s linear;
+}
+.hero--land .hero__center-mark{
+  width:min(58vw,620px);height:auto;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.55));
+}
+
+/* the headline sits low, over the room, readable from the first frame */
+.hero--land .hero__copy{
+  position:absolute;z-index:3;
+  left:var(--gutter);right:var(--gutter);
+  bottom:clamp(48px,9vh,110px);
+  opacity:1;
+  display:block;
+}
+.hero--land .hero__copy .hero__actions{margin-top:clamp(22px,3vw,34px)}
+.hero--land .hero__copy::before{content:none !important}
+.hero--land .h1-ink .ln > i{
+  -webkit-text-fill-color:var(--midnight) !important;
+  color:var(--midnight) !important;
+  background-image:none !important;background-color:transparent !important;
+}
+.hero--land .h1-ink .ln > i .thin{
+  -webkit-text-fill-color:var(--estate) !important;color:var(--estate) !important;
+}
+
+/* legibility under the room's brightest corners */
+.hero--land .hero__vignette{
+  z-index:1;
+  background:
+    linear-gradient(to bottom,rgba(0,29,57,.26) 0%,rgba(0,29,57,0) 30%),
+    radial-gradient(120% 62% at 12% 96%,rgba(243,247,249,.94),rgba(243,247,249,.42) 52%,rgba(243,247,249,0) 78%);
+  opacity:.92 !important;
+}
+.hero--land .hero__brandmark{
+  position:absolute;z-index:3;left:auto;right:var(--gutter);
+  bottom:clamp(48px,9vh,110px);
+  width:clamp(120px,11vw,168px);opacity:0;
+}
+
+/* ============================================================
+   65 · Menu retired — the header ends in a Book button
+   ============================================================ */
+.menu,.menu-open .header{display:none !important}
+body.menu-open{overflow:auto !important}
+.burger{display:none !important}
+
+.header__cta .header__book{display:inline-flex !important}
+@media (max-width:520px){
+  .header__cta .header__book{padding:11px 18px;font-size:10.5px;gap:8px}
+}
+
+/* section heads keep their rhythm now the eyebrow is gone */
+.standard__head .kicker + .standard__title,
+.sec-head .kicker + h2,
+h2.h2[style*="margin-top:22px"]{margin-top:0 !important}
+
+/* the mark holds the upper room; the headline holds the lower — no collision */
+.hero--land .hero__center{
+  padding-bottom:clamp(150px,26vh,270px);
+  align-content:start;
+  padding-top:calc(var(--h-header) + clamp(50px,10vh,110px));
+}
+.hero--land .hero__center-mark{width:min(44vw,470px)}
+@media (max-width:900px){
+  .hero--land .hero__center-mark{width:min(64vw,340px)}
+  .hero--land .hero__center{
+    padding-top:calc(var(--h-header) + 40px);
+    padding-bottom:0;
+  }
+}
