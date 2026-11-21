@@ -263,7 +263,7 @@
     const rail = $('.rail');
     if (!rail) return;
     rail.innerHTML = '<div class="rail__list"></div>' +
-      '<a class="rail__book" href="contact.html#form" aria-label="Book residence care">' +
+      '<a class="rail__book" href="booking-page/index.html" aria-label="Book residence care">' +
       '<span>Book</span>' +
       '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 3l5 5-5 5"/></svg>' +
       '</a>';

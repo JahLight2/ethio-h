@@ -24,3 +24,8 @@ Thumbs.db
 # logs
 *.log
 npm-debug.log*
+
+# the booking page's build
+booking/node_modules/
+booking/dist/
+
