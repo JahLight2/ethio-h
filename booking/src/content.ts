@@ -94,8 +94,8 @@ export const booking = {
   submit: 'Book the visit',
   disclaimer: 'Saved in this browser.',
   confirmed: {
-    stamp: 'BOOKED',
-    headline: (day: string) => `See you ${day}.`,
+    stamp: 'SAVED LOCALLY',
+    headline: (day: string) => `Saved for ${day}.`,
     change: 'Change',
     reference: 'Reference',
   },

@@ -220,10 +220,11 @@
       entries.forEach(en => {
         if (en.isIntersecting) {
           en.target.classList.add('in');
-          if (en.target.dataset.reveal === 'once') io.unobserve(en.target);
+        } else if (!REDUCED) {
+          en.target.classList.remove('in');
         }
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    }, { threshold: 0 });
     items.forEach((el) => io.observe(el));
     // any parent still holding .ln lines that is not itself observed
     $$('.ln').forEach(l => {

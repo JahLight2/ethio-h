@@ -6,9 +6,9 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-[var(--paper)]/90 backdrop-blur-md">
       <div className="shell flex h-[72px] items-center justify-between gap-6">
-        <a href="./index.html" aria-label={`${brand.legal} — home`}>
+        <a href="../index.html" aria-label={`${brand.legal} — home`}>
           <img
-            src="./logo-lockup-midnight.png"
+            src="./logo-lockup-mist.png"
             alt={brand.legal}
             className="h-[34px] w-auto"
             width={110}

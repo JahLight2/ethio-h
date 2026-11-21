@@ -129,7 +129,7 @@ function FrequencyPills() {
               <span
                 className="rounded-full px-1.5 py-0.5 font-sub text-[9px] font-extrabold"
                 style={{
-                  background: on ? 'var(--amber)' : 'rgba(200,137,47,.12)',
+                  background: on ? 'var(--mist-blue)' : 'rgba(189,216,233,.35)',
                   color: on ? 'var(--midnight)' : 'var(--amber-deep)',
                 }}
               >

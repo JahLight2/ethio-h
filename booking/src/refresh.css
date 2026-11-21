@@ -1,0 +1,30 @@
+:root{--midnight:#001d39;--estate:#0a4174;--steel:#49769f;--marine:#4e8ea2;--sea:#6ea2b3;--sky:#7bbde8;--mist-blue:#bdd8e9;--paper:#f3f7f9;--amber:#0a4174;--amber-deep:#0a4174;--good:#49769f;--ink:#001d39;--ink-soft:rgba(24,26,30,.7);--ink-faint:rgba(24,26,30,.48);--hair:rgba(24,26,30,.13);--f-display:'Manrope',sans-serif;--f-body:'Manrope',sans-serif}body{background:#f3f7f9}header.fixed{top:14px;left:2%;right:2%;border-radius:50px;background:#001d39;color:#fff}header.fixed img{filter:none}header.fixed .shell{width:calc(100% - 44px)}.display{font-family:'Manrope',sans-serif;font-weight:500;text-transform:none;letter-spacing:-.055em;line-height:1.05}.ink-type{background:none!important;color:#0a4174!important;-webkit-text-fill-color:#0a4174!important}.panel{border:0;border-radius:14px}.btn{background:#0a4174;color:white;letter-spacing:0;text-transform:none}.btn--ghost{background:transparent;color:#0a4174}.figure--amber{color:#0a4174}.field{border-radius:8px}@media(max-width:700px){header.fixed{left:10px;right:10px;top:10px}}
+/* Shared proportional logo treatment and a quiet branded footer. */
+header.fixed{height:70px}header.fixed .shell{height:70px}
+header.fixed .shell>a:first-child{display:flex;align-items:center;flex:0 0 96px}
+header.fixed .shell>a:first-child img{display:block;width:96px!important;height:auto!important;max-height:44px;object-fit:contain}
+.booking-footer{background:#001d39;color:#bdd8e9;border:0;border-radius:16px 16px 0 0}
+.booking-footer-inner{padding:52px 0 24px}.booking-footer-logo{display:inline-block;width:min(420px,65%)}
+.booking-footer-logo img{display:block;width:100%;height:auto;object-fit:contain;opacity:.52}
+.booking-footer-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid #35516a;margin-top:45px;padding-top:20px;font-family:Manrope,sans-serif;font-size:10.5px;color:#a9c2d3;letter-spacing:.08em}
+.booking-footer-meta a:hover{color:#fff}
+@media(max-width:700px){header.fixed,header.fixed .shell{height:60px}header.fixed .shell>a:first-child{flex-basis:84px}header.fixed .shell>a:first-child img{width:84px!important;max-height:39px}.booking-footer-inner{padding-top:35px}.booking-footer-logo{width:min(300px,85%)}}
+/* Identical logo-and-Book bar and naturally proportioned footer mark. */
+header.fixed,header.fixed .shell{height:86px}
+header.fixed .shell{width:calc(100% - 56px)}
+header.fixed .shell>a:first-child{flex:0 0 120px}
+header.fixed .shell>a:first-child img{width:120px!important;height:auto!important;max-height:none;object-fit:contain}
+header.fixed .shell>a.btn{width:80px!important;height:56px!important;padding:0!important;justify-content:center;background:#0a4174;color:#fff;font-size:14px}
+header.fixed .shell>a.btn:hover{background:#49769f}
+.booking-footer-logo{display:block;width:100%;max-width:460px;min-width:0}
+.booking-footer-logo img{display:block;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain;object-position:left center;transform:none}
+@media(max-width:700px){header.fixed,header.fixed .shell{height:72px}header.fixed .shell{width:calc(100% - 40px)}header.fixed .shell>a:first-child{flex-basis:102px}header.fixed .shell>a:first-child img{width:102px!important}header.fixed .shell>a.btn{width:74px!important;height:48px!important;font-size:13px}.booking-footer-logo{max-width:320px}}
+header.fixed{top:8px;left:8px;right:8px}
+.booking-footer-logo{width:100%;max-width:none}
+.booking-footer-logo img{width:100%;height:auto;max-width:none;object-fit:contain}
+@media(max-width:700px){.booking-footer-logo{max-width:none}}
+/* Original Wave Inlay in the header and footer, below all content. */
+header.fixed{isolation:isolate;overflow:hidden}
+header.fixed::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('../../assets/textures/brand-wave-original.jpg') center 34%/cover no-repeat;opacity:.18;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 32%,#000 75%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 32%,#000 75%,transparent 100%)}
+.booking-footer{position:relative;isolation:isolate;overflow:hidden}
+.booking-footer::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('../../assets/textures/brand-wave-original.jpg') center 65%/cover no-repeat;opacity:.12;-webkit-mask-image:linear-gradient(145deg,transparent 2%,rgba(0,0,0,.55) 46%,#000 100%);mask-image:linear-gradient(145deg,transparent 2%,rgba(0,0,0,.55) 46%,#000 100%)}

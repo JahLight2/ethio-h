@@ -1,0 +1,35 @@
+/* HomyClean-inspired visual refresh, retaining the original site interactions. */
+:root{--midnight:#001d39;--estate:#0a4174;--steel:#49769f;--marine:#4e8ea2;--sea:#6ea2b3;--sky:#7bbde8;--mist:#bdd8e9;--paper:#f3f7f9;--ink:#001d39;--ink-soft:rgba(24,26,30,.7);--ink-faint:rgba(24,26,30,.45);--hair:rgba(24,26,30,.13);--f-display:'Manrope',sans-serif;--f-body:'Manrope',sans-serif}
+body::after{display:none}.header,.header.is-dark{top:14px;left:2%;right:2%;width:96%;height:68px;border-radius:50px;background:#001d39;backdrop-filter:none;border:0}.header__in{width:calc(100% - 44px)}.header .header__mark .mk-mist{opacity:1}.header .header__mark .mk-mid{opacity:0}.header:not(.is-dark) .nav a,.header.is-dark .nav a{color:white}.header .nav a{font-weight:600;text-transform:none;letter-spacing:0}.header:not(.is-dark) .header__cta .btn,.header .header__cta .btn{--bg:#0a4174;--fg:white}.btn{--bg:#0a4174;--fg:white;text-transform:none;letter-spacing:0}.btn--ghost{--bg:transparent;--fg:#001d39}.btn--light{--bg:white;--fg:#001d39}.h2,.h3,.phero h1,.display{font-weight:500;letter-spacing:-.055em;text-transform:none;line-height:1.08}.phero{border-radius:0 0 16px 16px;overflow:hidden}.phero__bg{background-image:linear-gradient(120deg,#0a4174,#001d39)!important}.sec{padding-block:clamp(65px,7vw,110px)}.sec--mist{background:#0a4174;color:white}.sec--mist .h2,.sec--mist p{color:white}.footer{background:#001d39;color:#fff}.pat-wash:before,.pat-wash:after,.pat-edge:before,.pat-edge:after{opacity:.08}.loader{background:#001d39}.booker,.side-card{border-radius:14px}.q{font-family:var(--f-body)}.chip.is-selected,.chip.is-active{background:#0a4174;color:white}@media(max-width:700px){.header,.header.is-dark{left:10px;right:10px;width:auto;top:10px}.header__in{width:calc(100% - 32px)}}
+/* Brand marks share the same proportions and alignment as the landing header. */
+.header,.header.is-dark{height:70px}
+.header__in{height:100%;align-items:center}
+.header .header__mark{width:96px;height:auto;display:block;flex:0 0 96px}
+.header .header__mark img{display:block;width:100%;height:auto;object-fit:contain}
+.footer__mark img{display:block;width:132px;height:auto;max-width:100%;object-fit:contain}
+.footer__giant{position:static;width:var(--wrap);margin:70px auto 30px;line-height:normal;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+.footer__giant img{display:block;width:min(460px,62%);height:auto;max-width:100%;object-fit:contain;opacity:.32}
+.footer__top,.footer__bottom{color:#bdd8e9}
+@media(max-width:700px){.header,.header.is-dark{height:60px}.header .header__mark{width:84px;flex-basis:84px}.footer__giant{margin:50px auto 30px}.footer__giant img{width:min(320px,86%)}}
+
+.footer__giant{transform:none;letter-spacing:normal;pointer-events:auto}
+/* A single consistent header, matching the Ethio H logo-and-Book reference. */
+.header,.header.is-dark{height:86px}
+.header__in{height:100%;width:calc(100% - 56px);justify-content:space-between}
+.header .nav{display:none!important}
+.header .header__mark{flex:0 0 120px;width:120px}
+.header .header__mark img{width:120px;height:auto;max-height:none;object-fit:contain}
+.header .header__cta .btn,.header:not(.is-dark) .header__cta .btn{width:80px;height:56px;display:flex;justify-content:center;align-items:center;padding:0;font-size:14px;letter-spacing:0;background:#0a4174;color:#fff}
+.header .header__cta .btn .arr{display:none}
+.header .header__cta .btn:hover{background:#49769f;color:#fff}
+.footer__logo-large{width:var(--wrap);max-width:100%;min-width:0;margin:68px auto 35px;display:flex;justify-content:flex-start;overflow:visible}
+.footer__logo-large img{display:block;width:100%;max-width:460px;height:auto;max-height:none;object-fit:contain;object-position:left center;opacity:.55;transform:none}
+@media(max-width:700px){.header,.header.is-dark{height:72px}.header__in{width:calc(100% - 40px)}.header .header__mark{width:102px;flex-basis:102px}.header .header__mark img{width:102px}.header .header__cta .btn,.header:not(.is-dark) .header__cta .btn{width:74px;height:48px;font-size:13px}.footer__logo-large{margin:50px auto 30px}.footer__logo-large img{max-width:320px}}
+.header,.header.is-dark{top:8px;left:8px;right:8px;width:auto}
+.footer__logo-large img{width:100%;max-width:none;height:auto;object-fit:contain;opacity:.55}
+@media(max-width:700px){.footer__logo-large img{max-width:none}}
+/* Same quiet Wave Inlay treatment as the landing page. */
+.header{isolation:isolate;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('../assets/textures/brand-wave-original.jpg') center 34%/cover no-repeat;opacity:.18;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 32%,#000 75%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 32%,#000 75%,transparent 100%)}
+.footer{isolation:isolate}
+.footer::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('../assets/textures/brand-wave-original.jpg') center 65%/cover no-repeat;opacity:.12;-webkit-mask-image:linear-gradient(145deg,transparent 2%,rgba(0,0,0,.55) 46%,#000 100%);mask-image:linear-gradient(145deg,transparent 2%,rgba(0,0,0,.55) 46%,#000 100%)}
